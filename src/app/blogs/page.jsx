@@ -1,0 +1,66 @@
+import React from 'react';
+import Post from '../components/Post';
+const blogsData = [
+  {
+    id: 1,
+    title: "Getting Started with Next.js",
+    author: "Junayed Hasan",
+    category: "Next.js",
+    description:
+      "Learn the basics of Next.js and how to build modern web applications with React.",
+    date: "2026-09-10",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+  },
+  {
+    id: 2,
+    title: "Understanding React Components",
+    author: "Rahim Ahmed",
+    category: "React",
+    description:
+      "A beginner-friendly guide to understanding components and how they work in React.",
+    date: "2026-09-08",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
+  },
+  {
+    id: 3,
+    title: "Why TypeScript Matters",
+    author: "Nusrat Jahan",
+    category: "TypeScript",
+    description:
+      "Discover how TypeScript can make your JavaScript projects safer and easier to maintain.",
+    date: "2026-09-05",
+    image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea",
+  },
+  {
+    id: 4,
+    title: "Building Your First Web App",
+    author: "Sakib Khan",
+    category: "Web Development",
+    description:
+      "A simple roadmap for beginners who want to build their first real-world web application.",
+    date: "2026-09-02",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+  },
+  {
+    id: 5,
+    title: "Learning JavaScript Step by Step",
+    author: "Tanjim Hasan",
+    category: "JavaScript",
+    description:
+      "Explore the essential JavaScript concepts you need before moving into modern frameworks.",
+    date: "2026-08-30",
+    image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479",
+  },
+];
+
+const BlogPage = () => {
+    return (
+        <div>
+            <h2>My Nextjs Blogs</h2>
+            {
+                blogsData.map((post) => <Post key={post.id} blog={post} post={post} />)
+            }
+        </div>
+    );
+};
+export default BlogPage;
