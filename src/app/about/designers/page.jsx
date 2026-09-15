@@ -8,6 +8,7 @@ const DesignersPage = () => {
                 <li>Designer 1</li>
                 <li>Designer 2</li>
                 <li>Designer 3</li>
+                <li>Designer 4</li>
             </ul>
         </div>
     );
