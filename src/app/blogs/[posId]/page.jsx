@@ -1,5 +1,4 @@
 import React from 'react';
-import Post from '../components/Post';
 // TODO: Fetch data from API insted of Using static data
 const blogsData = [
   {
@@ -53,15 +52,25 @@ const blogsData = [
     image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479",
   },
 ];
-
-const BlogPage = () => {
+const PostDetailsPage = async ({ params }) => {
+    const { posId } = await params;
+    //TODO: load data from database
+    const post = blogsData.find(post => post.id === parseInt(posId))
+    console.log(posId, post);
     return (
-        <div className='flex gap-4'>
-            <h2>My Nextjs Blogs</h2>
+        <div>
+            <h2>Post Details Page: {posId}</h2>
             {
-                blogsData.map((post) => <Post key={post.id} blog={post} post={post} />)
+              post && <div>
+                <div className='bg-amber-300 h-[200px] w-[350px]'>
+                  <h3>{post.title}</h3>
+                <p>By {post.author}</p>
+                <p>{post.description}</p>
+                </div>
+              </div>
             }
         </div>
     );
 };
-export default BlogPage;
+
+export default PostDetailsPage;
